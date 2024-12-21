@@ -17,7 +17,7 @@ $read_title = $_POST['read_title'];
 echo($read_title);
 
 // SQL作成&実行
-$sql = 'SELECT * FROM `memo` WHERE title LIKE CONCAT("%","$read_title","%")';
+$sql = 'SELECT * FROM `memo` WHERE title LIKE "%' . $_POST["read_title"] . '%"';
 
 $stmt = $pdo->prepare($sql);
 
